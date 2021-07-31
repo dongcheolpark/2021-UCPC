@@ -10,15 +10,11 @@ int len(int x) {
 	return i;
 }
 
-string mk_str(int x,int y) {
+int main() {
+	cin.tie(NULL);
+	ios::sync_with_stdio(false);
 	string str;
-	for(int i = x;i<=y;i++) {
-		str.append(to_string(i));
-	}
-	return str;
-}
-
-void func(string str,int x,int y) {
+	cin>>str;
 	int first = 0,end = 0;
 	int k = 0;
 	for(int i = 1;i<=3;i++) {
@@ -36,10 +32,8 @@ void func(string str,int x,int y) {
 		}
 	}
 	if(first == 0) {
-		first = stoi(str);
-		end = stoi(str);
-		//cout<<str<<" "<<str<<"\n";
-		return;
+		cout<<str<<" "<<str<<"\n";
+		return 0;
 	}
 	int tmp = first;
 	for(int i = 0;i<str.length();i+=k) {
@@ -47,19 +41,5 @@ void func(string str,int x,int y) {
 		k = len(tmp);
 		tmp++;
 	}
-	//cout<<first<<" "<<end<<"\n";
-	if(first != x || end != y) {
-		cout<<x<<" "<<y<<" "<<first<<" "<<end<<endl;
-		cout<<"error"<<endl;
-	}
-}
-
-int main() {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-	for(int i = 1;i<=999;i++) {
-		for(int j = i;j<=999;j++) {
-			func(mk_str(i,j),i,j);
-		}
-	}
+	cout<<first<<" "<<end<<"\n";
 }
